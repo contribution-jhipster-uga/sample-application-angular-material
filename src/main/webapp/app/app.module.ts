@@ -17,7 +17,9 @@ import { SampleApplicationAppRoutingModule } from './app-routing.module';
 import { SampleApplicationHomeModule } from './home/home.module';
 import { SampleApplicationAccountModule } from './account/account.module';
 import { SampleApplicationEntityModule } from './entities/entity.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as moment from 'moment';
+import 'hammerjs';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
@@ -31,6 +33,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         SampleApplicationHomeModule,
         SampleApplicationAccountModule,
         SampleApplicationEntityModule
+        BrowserAnimationsModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],

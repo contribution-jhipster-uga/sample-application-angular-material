@@ -10,6 +10,14 @@ Main page styles
     background-size: contain;
 }
 
+.mat-raised-button {
+  background-color : lightblue;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 35px;
+  margin-top : 15px;
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (-moz-min-device-pixel-ratio: 2),
