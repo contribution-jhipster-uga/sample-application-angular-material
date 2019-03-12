@@ -53,7 +53,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
             test: /\.ts$/,
             enforce: 'pre',
             loader: 'tslint-loader',
-            exclude: ['node_modules', new RegExp('reflect-metadata\\' + path.sep + 'Reflect\\.ts')]
+            exclude: [/(node_modules)/, new RegExp('reflect-metadata\\' + path.sep + 'Reflect\\.ts')]
         },
         {
             test: /\.ts$/,
@@ -81,7 +81,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
                 },
                 'angular-router-loader'
             ],
-            exclude: ['node_modules']
+            exclude: /(node_modules)/
         },
         {
             test: /\.scss$/,
@@ -108,9 +108,9 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
             use: ['style-loader', 'css-loader']
         }]
     },
-    stats: process.env.DISABLE_WEBPACK_LOGS ? 'none' : options.stats,
+    stats: process.env.JHI_DISABLE_WEBPACK_LOGS ? 'none' : options.stats,
     plugins: [
-        process.env.DISABLE_WEBPACK_LOGS
+        process.env.JHI_DISABLE_WEBPACK_LOGS
             ? null
             : new SimpleProgressWebpackPlugin({
                 format: options.stats === 'minimal' ? 'compact' : 'expanded'

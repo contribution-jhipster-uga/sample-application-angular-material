@@ -12,9 +12,7 @@
         "suppressImplicitAnyIndexErrors": true,
         "outDir": "target/www/app",
         "lib": ["es7", "dom"],
-        "typeRoots": [
-            "node_modules/@types"
-        ],
+        "typeRoots": ["node_modules/@types"],
         "baseUrl": "./",
         "paths": {
             "app/*": ["src/main/webapp/app/*"]
@@ -22,11 +20,6 @@
         "importHelpers": true,
         "allowJs": true
     },
-    "include": [
-        "src/main/webapp/app",
-        "src/test/javascript/"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/main/webapp/app", "src/test/javascript/"],
+    "exclude": ["node_modules"]
 }

@@ -30,7 +30,7 @@ module.exports = (options) => ({
                     minifyJS:false,
                     minifyCSS:false
                 },
-                exclude: ['./src/main/webapp/index.html']
+                exclude: /(src\/main\/webapp\/index.html)/
             },
             {
                 test: /\.(jpe?g|png|gif|svg|woff2?|ttf|eot)$/i,
@@ -80,14 +80,15 @@ module.exports = (options) => ({
         new MergeJsonWebpackPlugin({
             output: {
                 groupBy: [
-                    { pattern: "./src/main/webapp/i18n/en/*.json", fileName: "./i18n/en.json" }
+                    { pattern: "./src/main/webapp/i18n/en/*.json", fileName: "./i18n/en.json" },
+                    { pattern: "./src/main/webapp/i18n/fr/*.json", fileName: "./i18n/fr.json" }
                     // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
                 ]
             }
         }),
         new HtmlWebpackPlugin({
             template: './src/main/webapp/index.html',
-            chunks: ['vendors', 'polyfills', 'global', 'main'],
+            chunks: ['vendors', 'polyfills', 'main', 'global'],
             chunksSortMode: 'manual',
             inject: 'body'
         })

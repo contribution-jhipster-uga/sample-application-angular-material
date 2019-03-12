@@ -6,16 +6,8 @@ Main page styles
     display: inline-block;
     width: 347px;
     height: 497px;
-    background: url('../../content/images/hipster.png') no-repeat center top;
+    background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
     background-size: contain;
-}
-
-.mat-raised-button {
-  background-color : lightblue;
-  border-style: solid;
-  border-width: 1px;
-  margin-bottom: 35px;
-  margin-top : 15px;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -25,7 +17,7 @@ Main page styles
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     .hipster {
-        background: url('../../content/images/hipster2x.png') no-repeat center top;
+        background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
         background-size: contain;
     }
 }

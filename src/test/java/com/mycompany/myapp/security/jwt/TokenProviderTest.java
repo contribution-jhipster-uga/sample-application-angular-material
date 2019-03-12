@@ -2,8 +2,6 @@ package com.mycompany.myapp.security.jwt;
 
 import com.mycompany.myapp.security.AuthoritiesConstants;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.security.Key;
 import java.util.*;
 
@@ -26,7 +24,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TokenProviderTest {
 
-    private final Base64.Encoder encoder = Base64.getEncoder();
     private final long ONE_MINUTE = 60000;
     private Key key;
     private JHipsterProperties jHipsterProperties;

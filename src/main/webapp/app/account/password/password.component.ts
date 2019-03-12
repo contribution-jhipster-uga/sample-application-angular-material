@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Principal } from 'app/core';
+import { AccountService } from 'app/core';
 import { PasswordService } from './password.service';
 
 @Component({
@@ -16,10 +16,10 @@ export class PasswordComponent implements OnInit {
     newPassword: string;
     confirmPassword: string;
 
-    constructor(private passwordService: PasswordService, private principal: Principal) {}
+    constructor(private passwordService: PasswordService, private accountService: AccountService) {}
 
     ngOnInit() {
-        this.principal.identity().then(account => {
+        this.accountService.identity().then(account => {
             this.account = account;
         });
     }
