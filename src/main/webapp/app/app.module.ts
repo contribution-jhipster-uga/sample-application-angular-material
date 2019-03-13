@@ -17,13 +17,19 @@ import { SampleApplicationAppRoutingModule } from './app-routing.module';
 import { SampleApplicationHomeModule } from './home/home.module';
 import { SampleApplicationAccountModule } from './account/account.module';
 import { SampleApplicationEntityModule } from './entities/entity.module';
+import { SampleApplicationSampleMaterialModule } from './samplematerial/samplematerial.module';
 import * as moment from 'moment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import 'hammerjs';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
@@ -36,6 +42,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         SampleApplicationCoreModule,
         SampleApplicationHomeModule,
         SampleApplicationAccountModule,
+        SampleApplicationSampleMaterialModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         SampleApplicationEntityModule,
         SampleApplicationAppRoutingModule

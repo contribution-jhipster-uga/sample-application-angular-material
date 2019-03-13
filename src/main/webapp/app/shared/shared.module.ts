@@ -9,12 +9,13 @@ import {
     HasAnyAuthorityDirective
 } from './';
 
+import { JhMaterialModule } from 'app/shared/jh-material.module';
 @NgModule({
-    imports: [SampleApplicationSharedLibsModule, SampleApplicationSharedCommonModule],
+    imports: [JhMaterialModule, SampleApplicationSharedLibsModule, SampleApplicationSharedCommonModule],
     declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
     providers: [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }],
     entryComponents: [JhiLoginModalComponent],
-    exports: [SampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
+    exports: [JhMaterialModule, SampleApplicationSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SampleApplicationSharedModule {

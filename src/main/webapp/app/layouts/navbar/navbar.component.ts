@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
     version: string;
+    otherTheme = false;
 
     constructor(
         private loginService: LoginService,
@@ -35,6 +36,13 @@ export class NavbarComponent implements OnInit {
         this.isNavbarCollapsed = true;
     }
 
+    changeTheme() {
+        this.otherTheme = !this.otherTheme;
+    }
+
+    getTheme() {
+        return this.otherTheme;
+    }
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;

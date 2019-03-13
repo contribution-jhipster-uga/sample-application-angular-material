@@ -7,7 +7,6 @@ Navbar
 
 .navbar-version {
     font-size: 0.65em;
-    color: $navbar-dark-color;
 }
 
 .profile-image {
@@ -38,6 +37,16 @@ Navbar
             color: $navbar-dark-hover-color;
         }
     }
+}
+
+.buttonLink:hover {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    font-weight: normal;
 }
 
 /* ==========================================================================

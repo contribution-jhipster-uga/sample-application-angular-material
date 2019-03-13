@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError } from '@angular/router';
-
+import { NavbarComponent } from 'app/layouts/navbar/navbar.component';
 import { JhiLanguageHelper } from 'app/core';
 
 @Component({
@@ -8,6 +8,8 @@ import { JhiLanguageHelper } from 'app/core';
     templateUrl: './main.component.html'
 })
 export class JhiMainComponent implements OnInit {
+    otherTheme = false;
+
     constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router) {}
 
     private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {
@@ -19,6 +21,9 @@ export class JhiMainComponent implements OnInit {
         return title;
     }
 
+    changeTheme() {
+        this.otherTheme = !this.otherTheme;
+    }
     ngOnInit() {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
