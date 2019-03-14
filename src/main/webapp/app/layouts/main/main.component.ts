@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Injectable } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError } from '@angular/router';
-import { NavbarComponent } from 'app/layouts/navbar/navbar.component';
+
 import { JhiLanguageHelper } from 'app/core';
 
 @Component({
     selector: 'jhi-main',
     templateUrl: './main.component.html'
 })
+@Injectable({ providedIn: 'root' })
 export class JhiMainComponent implements OnInit {
     otherTheme = false;
 
@@ -21,9 +22,6 @@ export class JhiMainComponent implements OnInit {
         return title;
     }
 
-    changeTheme() {
-        this.otherTheme = !this.otherTheme;
-    }
     ngOnInit() {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {

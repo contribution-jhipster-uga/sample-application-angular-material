@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService } from 'ng-jhipster';
@@ -7,6 +7,7 @@ import { SessionStorageService } from 'ngx-webstorage';
 import { VERSION } from 'app/app.constants';
 import { JhiLanguageHelper, AccountService, LoginModalService, LoginService } from 'app/core';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
+import { JhiMainComponent } from 'app/layouts/main/main.component';
 
 @Component({
     selector: 'jhi-navbar',
@@ -20,7 +21,8 @@ export class NavbarComponent implements OnInit {
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
     version: string;
-    otherTheme = false;
+    checkedToggle = false;
+    disabledToggle = false;
 
     constructor(
         private loginService: LoginService,
@@ -30,19 +32,18 @@ export class NavbarComponent implements OnInit {
         private accountService: AccountService,
         private loginModalService: LoginModalService,
         private profileService: ProfileService,
-        private router: Router
+        private router: Router,
+        private mainComponent: JhiMainComponent
     ) {
         this.version = VERSION ? 'v' + VERSION : '';
         this.isNavbarCollapsed = true;
     }
 
     changeTheme() {
-        this.otherTheme = !this.otherTheme;
+        this.mainComponent.otherTheme = !this.mainComponent.otherTheme;
+        console.log('Pass');
     }
 
-    getTheme() {
-        return this.otherTheme;
-    }
     ngOnInit() {
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;

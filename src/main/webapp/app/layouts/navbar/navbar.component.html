@@ -5,10 +5,10 @@
                 <span class="logo-img"></span>
                 <span jhiTranslate="global.title" class="navbar-title">SampleApplication</span> <span class="navbar-version">{{version}}</span>
             </button>
-            <!-- <div fxFlex fxLayout fxShow.gt-sm>
-                <mat-slide-toggle mat-button color="accent" (click)="changeTheme()">
+            <div fxFlex fxLayout fxShow.gt-sm>
+                <mat-slide-toggle mat-button (click)="changeTheme()">
                 </mat-slide-toggle>
-            </div> -->
+            </div>
             <div fxFlex fxLayout fxShow="false" fxShow.gt-sm fxLayoutAlign="flex-end" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
                 <ul fxLayout fxLayoutGap="20px" ml-auto class="navbar-nav">
                     <li fxHide.xs routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -58,33 +58,33 @@
     <mat-menu x-position="before" #menu="matMenu">
         <div [ngSwitch]="isAuthenticated()">
             <button mat-menu-item routerLink="/" routerLinkActive="active">
-                <mat-icon color="accent">home</mat-icon>
+                <mat-icon>home</mat-icon>
                 <span jhiTranslate="global.menu.home">Home</span>
             </button>
             <button mat-menu-item routerLink="samplematerial" routerLinkActive="active">
-                <mat-icon color="accent">info</mat-icon>
+                <mat-icon>info</mat-icon>
                 <span> Angular Material Sample page </span>
             </button>
             <button *ngSwitchCase="true" mat-menu-item [matMenuTriggerFor]="entities">
-                <mat-icon matTooltip="Entities" color="accent">list</mat-icon>
+                <mat-icon matTooltip="Entities">list</mat-icon>
                 <span jhiTranslate="global.menu.entities.main">
                     Entities
                 </span>
             </button>
             <button *ngSwitchCase="true" mat-menu-item [matMenuTriggerFor]="administration">
-                <mat-icon matTooltip="Administration" color="accent">build</mat-icon>
+                <mat-icon matTooltip="Administration">build</mat-icon>
                 <span jhiTranslate="global.menu.admin.main">
                     Administration
                 </span>
             </button>
             <button mat-menu-item [matMenuTriggerFor]="language">
-                <mat-icon matTooltip="Language" color="accent">account_circle</mat-icon>
+                <mat-icon matTooltip="Language">account_circle</mat-icon>
                 <span jhiTranslate="global.menu.language">
                     Language
                 </span>
             </button>
             <button mat-menu-item [matMenuTriggerFor]="account">
-                <mat-icon matTooltip="Account" color="accent">account_circle</mat-icon>
+                <mat-icon matTooltip="Account">account_circle</mat-icon>
                 <span jhiTranslate="global.menu.account.main">
                     Account
                 </span>
@@ -93,7 +93,7 @@
     </mat-menu>
 
     <mat-menu #entities="matMenu">
-        <button mat-menu-item color="accent" routerLink="product" routerLinkActive="active" (click)="collapseNavbar()">
+        <button mat-menu-item routerLink="product" routerLinkActive="active" (click)="collapseNavbar()">
             <fa-icon [icon]="'user'" [fixedWidth]="true"></fa-icon>
             <span jhiTranslate="global.menu.entities.product">Product</span>
         </button>
